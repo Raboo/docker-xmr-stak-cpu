@@ -5,6 +5,7 @@
 FROM alpine:edge
 
 ENV XMR_STAK_CPU_VERSION v1.3.0-1.5.0
+ENV NICE 0
 
 COPY app /app
 
@@ -36,7 +37,6 @@ RUN apk del --no-cache --purge \
       hwloc-dev@testing \
       build-base \
       cmake \
-      coreutils \
       git || echo "apk purge error ignored"
 
 ###
